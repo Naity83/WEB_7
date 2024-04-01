@@ -1,0 +1,11 @@
+1. Через Докер подключаем postgres
+2. Открываем DBeaver
+3. Создаем файл config.ini
+4. Создадим директорию conf для подключения в ней файл db.python
+5. В директории conf создадим еще один файл models.py для моделей(создание таблиц)
+6. Команда: alembic init migrations       создает папку миграций
+7. В файлу env.py пишем from conf.models import Base и ищем рядок target_metadata и переделываем его на такой: target_metadata = Base.metadata
+8. Пишем : from conf.db import URI и дальше  в файле config.set_main_option('sqlalchemy.url', URI)
+9. Пишем команду alembic revision --autogenerate -m 'Init'
+10. Команда для создания таблиц alembic upgrade head
+11. Создадим директорию seeds
