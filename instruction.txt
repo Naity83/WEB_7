@@ -8,4 +8,7 @@
 8. Пишем : from conf.db import URI и дальше  в файле config.set_main_option('sqlalchemy.url', URI)
 9. Пишем команду alembic revision --autogenerate -m 'Init'
 10. Команда для создания таблиц alembic upgrade head
-11. Создадим директорию seeds
+11. Создадим директорию seeds для создания файлов, которые будут заполнять таблицы данными
+12. Для того, чтобы запустить файл например groups.py из директории seeds надо запустить такую строку: python -m seeds.groups
+
+
